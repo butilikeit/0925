@@ -1,0 +1,40 @@
+### 문제풀이 핵심아이디어 또는 새롭게 알게된 내용: 
+    이중 반복문을 사용한 행렬값 추가
+    행렬 초기화
+    
+### 코드의 시간복잡도와 그 이유:
+    O(n * l * k) : 행렬의 크기만큼 소요
+
+### 코드:
+```python
+n, m = input().split()
+n = int(n)
+m = int(m)
+
+a = []
+for i in range(n):
+    row = input().split()
+    row = [int(x) for x in row]
+    a.append(row)
+
+k, l = input().split()
+k = int(k)
+l = int(l)
+
+b = []
+for i in range(k):
+    row = input().split()
+    row = [int(x) for x in row]
+    b.append(row)
+
+answer = [[0] * l for _ in range(n)]
+
+for i in range(n):
+    for j in range(l):
+        for x in range(k):
+            answer[i][j] += a[i][x] * b[x][j]
+
+# 결과 출력
+for row in answer:
+    print(" ".join(map(str, row)))
+```
