@@ -1,0 +1,20 @@
+### 문제풀이 핵심아이디어 또는 새롭게 알게된 내용: 
+    동전 개수가 최솟값 : 동전의 가치가 높은 순부터 주기
+    
+### 코드의 시간복잡도와 그 이유:
+    O(1)
+
+### 코드:
+```python
+x=int(input())
+count=0
+case=[500, 100, 50, 10, 5, 1]
+change = 1000 - x
+
+for i in case :
+    if change//i > 0 :
+        count+=change//i
+        change=change%i
+
+print(count)
+```
