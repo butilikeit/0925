@@ -1,0 +1,19 @@
+n, k = input().split()
+n = int(n)
+k = int(k)
+values = []
+
+for i in range(n):
+    value = int(input())
+    values.append(value)
+
+values.sort(reverse=True)
+
+count = 0
+
+for i in values:
+    if k // i > 0:
+        count += k // i
+        k = k % i
+
+print(count)
